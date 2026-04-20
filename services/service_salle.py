@@ -1,4 +1,4 @@
-from Data.dao_salle import DataSalle
+from data.dao_salle import DataSalle
 
 class ServiceSalle:
 
