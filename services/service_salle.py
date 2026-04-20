@@ -21,3 +21,6 @@ class ServiceSalle:
 
         self.dao_salle.update_salle(salle)
         return True
+
+    def supprimer_salle(self, code):
+        self.dao_salle.delete_salle(code)
