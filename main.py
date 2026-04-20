@@ -10,7 +10,7 @@ try:
     print(" Connexion réussie à la base de données")
     cnx.close()
 except Exception as e:
-    print(" Error connexion :", e)
+    print(" Erreur de connexion :", e)
 
 
 dao.clear_table()
