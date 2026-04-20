@@ -59,3 +59,19 @@ class DataSalle:
         cnx.commit()
         cursor.close()
         cnx.close()
+
+    def get_salle_by_code(self, code):
+        cnx = self.get_connection()
+        cursor = cnx.cursor()
+
+        query = "SELECT code, libelle, type, capacite FROM salle WHERE code = %s"
+        cursor.execute(query, (code,))
+        result = cursor.fetchone()
+
+        cursor.close()
+        cnx.close()
+
+        if result:
+            return result
+        else:
+            return "Salle non trouvée"
