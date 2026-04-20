@@ -24,3 +24,12 @@ class ViewSalle(ctk.CTk):
 
         btn = ctk.CTkButton(self, text="Ajouter", command=self.ajouter_salle)
         btn.pack()
+
+        def ajouter_salle(self):
+            salle = Salle(
+                self.code.get(),
+                self.libelle.get(),
+                self.type.get(),
+                int(self.capacite.get())
+            )
+            self.service_salle.ajouter_salle(salle)
