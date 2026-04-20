@@ -43,3 +43,11 @@ class DataSalle:
         row = cursor.fetchone()
         conn.close()
         return Salle(*row) if row else None
+
+    def get_salles(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM salle")
+        rows = cursor.fetchall()
+        conn.close()
+        return [Salle(*r) for r in rows]
