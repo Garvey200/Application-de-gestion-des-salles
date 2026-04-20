@@ -51,3 +51,11 @@ class DataSalle:
         rows = cursor.fetchall()
         conn.close()
         return [Salle(*r) for r in rows]
+
+    def clear_table(self):
+        cnx = self.get_connection()
+        cursor = cnx.cursor()
+        cursor.execute("TRUNCATE TABLE salle")
+        cnx.commit()
+        cursor.close()
+        cnx.close()
